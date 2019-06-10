@@ -10,6 +10,7 @@ namespace CS321_W3D1_ToDoAPI_EF.Services
     {
         private readonly ToDoContext _toDoContext;
 
+        // ToDoContext is injected
         public ToDoService(ToDoContext toDoContext)
         {
             _toDoContext = toDoContext;

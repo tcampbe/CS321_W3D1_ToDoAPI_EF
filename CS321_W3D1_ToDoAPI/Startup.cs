@@ -23,9 +23,10 @@ namespace CS321_W3D1_ToDoAPI_EF
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<ToDoContext>(options => 
-                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+            // register ToDoContext so it can be injected into ToDoService
+            services.AddDbContext<ToDoContext>();
 
+            // register ToDoService so it can be injected into controller
             services.AddScoped<IToDoService, ToDoService>();
         }
 
