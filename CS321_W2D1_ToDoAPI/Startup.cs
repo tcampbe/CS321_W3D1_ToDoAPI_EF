@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CS321_W2D2_ToDoAPI.Services;
+using CS321_W3D1_ToDoAPI_EF.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,7 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace CS321_W2D2_ToDoAPI
+namespace CS321_W3D1_ToDoAPI_EF
 {
     public class Startup
     {

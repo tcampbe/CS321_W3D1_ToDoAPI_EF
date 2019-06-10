@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS321_W2D2_ToDoAPI", "CS321_W2D1_ToDoAPI\CS321_W2D2_ToDoAPI.csproj", "{0775E307-52A4-4CB9-B2EB-A01BA3F9AB01}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS321_W3D1_ToDoAPI_EF", "CS321_W2D1_ToDoAPI\CS321_W3D1_ToDoAPI_EF.csproj", "{0775E307-52A4-4CB9-B2EB-A01BA3F9AB01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

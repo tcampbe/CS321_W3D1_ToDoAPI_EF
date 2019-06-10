@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace CS321_W2D2_ToDoAPI
+namespace CS321_W3D1_ToDoAPI_EF
 {
     public class Program
     {

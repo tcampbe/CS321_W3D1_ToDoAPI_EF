@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CS321_W2D2_ToDoAPI.Models;
+using CS321_W3D1_ToDoAPI_EF.Models;
 
-namespace CS321_W2D2_ToDoAPI.Services
+namespace CS321_W3D1_ToDoAPI_EF.Services
 {
     public class ToDoService : IToDoService
     {

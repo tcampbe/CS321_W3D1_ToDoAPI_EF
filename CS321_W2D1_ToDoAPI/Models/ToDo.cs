@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace CS321_W2D2_ToDoAPI.Models
+namespace CS321_W3D1_ToDoAPI_EF.Models
 {
     public class ToDo
     {

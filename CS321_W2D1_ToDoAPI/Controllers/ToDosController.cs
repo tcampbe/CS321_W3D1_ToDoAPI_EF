@@ -1,8 +1,8 @@
-﻿using CS321_W2D2_ToDoAPI.Models;
-using CS321_W2D2_ToDoAPI.Services;
+﻿using CS321_W3D1_ToDoAPI_EF.Models;
+using CS321_W3D1_ToDoAPI_EF.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CS321_W2D2_ToDoAPI.Controllers
+namespace CS321_W3D1_ToDoAPI_EF.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
