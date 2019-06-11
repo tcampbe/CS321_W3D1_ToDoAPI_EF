@@ -12,6 +12,7 @@ namespace CS321_W3D1_ToDoAPI_EF.Data
 {
     public class ToDoContext : DbContext
     {
+        public DbSet<ToDo> ToDos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -28,9 +29,7 @@ namespace CS321_W3D1_ToDoAPI_EF.Data
                new ToDo { Id = 3, Description = "Mow lawn" }
             );
         }
-
-        public DbSet<ToDo> ToDos { get; set; }
-
+        
     }
 
 
@@ -102,6 +101,7 @@ namespace CS321_W3D1_ToDoAPI_EF.Services
         public void Remove(ToDo todo)
         {
             _todoContext.ToDos.Remove(todo);
+            _todoContext.SaveChanges();
         }
 
     }
