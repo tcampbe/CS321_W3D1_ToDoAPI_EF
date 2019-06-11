@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using CS321_W3D1_ToDoAPI_EF.Data;
 using CS321_W3D1_ToDoAPI_EF.Models;
 
@@ -8,18 +6,17 @@ namespace CS321_W3D1_ToDoAPI_EF.Services
 {
     public class ToDoService : IToDoService
     {
-        private readonly ToDoContext _toDoContext;
+        private readonly IToDoRepository _todoRepo;
 
-        public ToDoService(ToDoContext toDoContext)
+        public ToDoService(IToDoRepository todoRepo)
         {
-            _toDoContext = toDoContext;
+            _todoRepo = todoRepo;
         }
 
         public ToDo Add(ToDo todo)
         {
             // store in the list of ToDos
-            _toDoContext.ToDos.Add(todo);
-            _toDoContext.SaveChanges();
+            _todoRepo.Add(todo);
             // return the new ToDo with Id filled in
             return todo;
         }
@@ -27,37 +24,31 @@ namespace CS321_W3D1_ToDoAPI_EF.Services
         public ToDo Get(int id)
         {
             // return the specified ToDo or null if not found
-            return _toDoContext.ToDos.FirstOrDefault(p => p.Id == id);
+            return _todoRepo.Get(id);
         }
 
         public IEnumerable<ToDo> GetAll()
         {
-            return _toDoContext.ToDos.ToList();
+            return _todoRepo.GetAll();
         }
 
         public ToDo Update(ToDo updatedToDo)
         {
             // get the ToDo object in the current list with this id 
-            var currentToDo = this.Get(updatedToDo.Id);
+            var currentToDo = _todoRepo.Get(updatedToDo.Id);
 
             // return null if todo to update isn't found
             if (currentToDo == null) return null;
 
-            // copy the property values from the updated ToDo into the current todo object
-            _toDoContext.Entry(currentToDo)
-                .CurrentValues
-                .SetValues(updatedToDo);
             // update the todo
-            _toDoContext.ToDos.Update(currentToDo);
-            _toDoContext.SaveChanges();
+            _todoRepo.Update(currentToDo);
 
             return currentToDo;
         }
 
         public void Remove(ToDo todo)
         {
-            _toDoContext.ToDos.Remove(todo);
-            _toDoContext.SaveChanges();
+            _todoRepo.Remove(todo);
         }
 
     }

@@ -6,13 +6,10 @@ namespace CS321_W3D1_ToDoAPI_EF.Data
 {
     public class ToDoContext : DbContext
     {
-        public ToDoContext(DbContextOptions<ToDoContext> options)
-            : base(options)
-        { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseSqlite("Data Source=ToDos.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

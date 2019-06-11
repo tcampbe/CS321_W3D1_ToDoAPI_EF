@@ -23,10 +23,11 @@ namespace CS321_W3D1_ToDoAPI_EF
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<ToDoContext>(options => 
-                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ToDoContext>();
 
+            services.AddScoped<IToDoRepository, EFToDoRepository>();
             services.AddScoped<IToDoService, ToDoService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
