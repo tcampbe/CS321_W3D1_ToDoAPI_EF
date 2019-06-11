@@ -1,4 +1,11 @@
-﻿using System.Collections.Generic;
+﻿/************************************
+ * Included for reference only!
+ * 
+ * This is what the service looked like
+ * after the previous lesson, before adding
+ * Entity Framework.
+ ************************************/
+using System.Collections.Generic;
 using System.Linq;
 using CS321_W3D1_ToDoAPI_EF.Models;
 
