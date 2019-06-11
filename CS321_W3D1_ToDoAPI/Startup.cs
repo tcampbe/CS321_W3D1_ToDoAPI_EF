@@ -22,7 +22,9 @@ namespace CS321_W3D1_ToDoAPI_EF
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddSingleton<IToDoService, ToDoService>();
+            // TODO: register the ToDoContext for injection using AddDbContext
+
+            // TODO: register the ToDoService for injection using AddScoped
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
