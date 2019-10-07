@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using CS321_W3D1_ToDoAPI_EF.Data;
 
 namespace CS321_W3D1_ToDoAPI_EF
 {
@@ -23,8 +24,9 @@ namespace CS321_W3D1_ToDoAPI_EF
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // TODO: register the ToDoContext for injection using AddDbContext
-
+            services.AddDbContext<ToDoContext>();
             // TODO: register the ToDoService for injection using AddScoped
+            services.AddScoped<IToDoService, ToDoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

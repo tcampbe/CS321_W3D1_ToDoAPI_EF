@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using CS321_W3D1_ToDoAPI_EF.Models;
+using CS321_W3D1_ToDoAPI_EF.Data;
 
 namespace CS321_W3D1_ToDoAPI_EF.Services
 {
@@ -9,8 +10,9 @@ namespace CS321_W3D1_ToDoAPI_EF.Services
 
         private readonly ToDoContext _todoContext;
 
-        public ToDoService(/* TODO: add a parameter so ToDoContext can be injected */)
+        public ToDoService(ToDoContext toDoContext /* TODO: add a parameter so ToDoContext can be injected */)
         {
+            _todoContext = toDoContext;
             // TODO: keep a reference to the ToDoContext in _todoContext
         }
 
@@ -21,6 +23,8 @@ namespace CS321_W3D1_ToDoAPI_EF.Services
 
             // store in the list of ToDos
             _todoContext.ToDos.Add(todo);
+            _todoContext.SaveChanges();
+
             // return the new ToDo with Id filled in
             return todo;
         }
@@ -28,11 +32,13 @@ namespace CS321_W3D1_ToDoAPI_EF.Services
         public ToDo Get(int id)
         {
             // TODO: return the specified ToDo using Find()
+            return _todoContext.ToDos.Find(id);
         }
 
         public IEnumerable<ToDo> GetAll()
         {
             // TODO: return all ToDos using ToList()
+            return _todoContext.ToDos.ToList();
         }
 
         public ToDo Update(ToDo updatedToDo)
@@ -61,7 +67,9 @@ namespace CS321_W3D1_ToDoAPI_EF.Services
 
         public void Remove(ToDo todo)
         {
+            _todoContext.ToDos.Remove(todo);
             // TODO: remove the todo
+            _todoContext.SaveChanges();
         }
 
     }
